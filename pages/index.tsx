@@ -13,43 +13,32 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          I'm <a href="">Reinhard Jonathan Silalahi!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          Welcome to my personal blog site.
+          You can call it a blog, but sometimes it seems like a journal site.
+          Here you can find tutorials related to <code className={styles.code}>android</code>,
+          <code className={styles.code}>backend</code>, <code className={styles.code}>kubernetes</code>, and so on.
+          <br /><br />
+          Happy learning!
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="/backend" className={styles.card}>
+            <h2>Learn Backend &rarr;</h2>
+            <p>Here is all my journey begins, you can find all of my backend learning journey here</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="/kubernetes" className={styles.card}>
+            <h2>Learn Kubernetes &rarr;</h2>
+            <p>All about deployment, scaling, and management of containerized applications with Kubernetes</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+          <a href="/android" className={styles.card}>
+            <h2>Learn Android &rarr;</h2>
+            <p>Maybe you can find the reason here why i left Android Dev. But not so sure, I am still on it as a hobby.</p>
           </a>
         </div>
       </main>
