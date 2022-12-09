@@ -27,17 +27,17 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/backend" className={styles.card}>
+          <a href="/learn-backend" className={styles.card}>
             <h2>Learn Backend &rarr;</h2>
             <p>Here is all my journey begins, you can find all of my backend learning journey here</p>
           </a>
 
-          <a href="/kubernetes" className={styles.card}>
+          <a href="/learn-kubernetes" className={styles.card}>
             <h2>Learn Kubernetes &rarr;</h2>
             <p>All about deployment, scaling, and management of containerized applications with Kubernetes</p>
           </a>
 
-          <a href="/android" className={styles.card}>
+          <a href="/learn-android" className={styles.card}>
             <h2>Learn Android &rarr;</h2>
             <p>Maybe you can find the reason here why i left Android Dev. But not so sure, I am still on it as a hobby.</p>
           </a>
