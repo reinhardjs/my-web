@@ -20,7 +20,7 @@ export default function Home() {
         <p className={styles.description}>
           Welcome to my personal blog site.
           You can call it a blog, but sometimes it seems like a journal site.
-          Here you can find tutorials related to <code className={styles.code}>android</code>,
+          Here you can find topics related to <code className={styles.code}>android</code>,
           <code className={styles.code}>backend</code>, <code className={styles.code}>kubernetes</code>, and so on.
           <br /><br />
           Happy learning!
@@ -29,7 +29,7 @@ export default function Home() {
         <div className={styles.grid}>
           <a href="/learn-backend" className={styles.card}>
             <h2>Learn Backend &rarr;</h2>
-            <p>Here is all my journey begins, you can find all of my backend learning journey here</p>
+            <p>Here is my journey begins (again), you can find all of my backend learning journey here</p>
           </a>
 
           <a href="/learn-kubernetes" className={styles.card}>
