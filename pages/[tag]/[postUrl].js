@@ -1,8 +1,9 @@
-import fetcher from "../../lib/fetcher";
-import Spinner from "../../components/_child/spinner";
-import ErrorComponent from "../../components/_child/error";
 import ReactMarkdown from "react-markdown";
 import { useRouter } from "next/router";
+
+import ErrorComponent from "../../components/_child/error";
+import Spinner from "../../components/_child/spinner";
+import fetcher from "../../lib/fetcher";
 // import { SWRConfig } from "swr";
 
 export default function Page() {

@@ -1,9 +1,10 @@
-import fetcher from "../../lib/fetcher";
-import Spinner from "../../components/_child/spinner";
-import ErrorComponent from "../../components/_child/error";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { SWRConfig } from "swr";
-import Head from "next/head";
+
+import ErrorComponent from "../../components/_child/error";
+import Spinner from "../../components/_child/spinner";
+import fetcher from "../../lib/fetcher";
 
 export default function Page({ fallback }) {
   const router = useRouter();

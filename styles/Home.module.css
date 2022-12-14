@@ -40,26 +40,6 @@
   font-size: 3rem;
 }
 
-/* .title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1rem;
-}
-
-.code {
-  background: #EEE;
-  border-radius: 5px;
-  padding: 0.25rem;
-  font-size: 1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-} */
-
 .grid {
   display: flex;
   align-items: center;

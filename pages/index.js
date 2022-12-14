@@ -3,6 +3,7 @@ import Section1 from "../components/section1";
 import Section2 from "../components/section2";
 import Section3 from "../components/section3";
 import Section4 from "../components/section4";
+
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
