@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import rangeParser from "parse-numeric-range";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import kotlin from "react-syntax-highlighter/dist/cjs/languages/prism/kotlin";
@@ -46,7 +46,7 @@ export default function Page() {
 }
 
 function Article({ content }) {
-  const syntaxTheme = prism;
+  const syntaxTheme = oneDark;
 
   const MarkdownComponents = {
     code({ node, inline, className, ...props }) {
