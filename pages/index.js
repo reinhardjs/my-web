@@ -29,24 +29,23 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
-          <Link href="/learn-backend">
-            <a className={styles.card}>
-              <h2 className="text-lg font-bold mb-2">Learn Backend &rarr;</h2>
-              <p className="text-md">
-                Here is my journey begins (again), you can find all of my
-                backend learning journey here
-              </p>
-            </a>
-          </Link>
-
           <Link href="/learn-kubernetes">
             <a className={styles.card}>
               <h2 className="text-lg font-bold mb-2">
                 Learn Kubernetes &rarr;
               </h2>
               <p className="text-md">
-                All about deployment, scaling, and management of containerized
-                applications with Kubernetes
+                All about deployment, scaling, and management with Kubernetes
+              </p>
+            </a>
+          </Link>
+
+          {/* <Link href="/learn-backend">
+            <a className={styles.card}>
+              <h2 className="text-lg font-bold mb-2">Learn Backend &rarr;</h2>
+              <p className="text-md">
+                Here is my journey begins (again), you can find all of my
+                backend learning journey here
               </p>
             </a>
           </Link>
@@ -59,13 +58,13 @@ export default function Home() {
                 not so sure, I am still on it as a hobby.
               </p>
             </a>
-          </Link>
+          </Link> */}
         </div>
       </div>
-      <Section1></Section1>
+      {/* <Section1></Section1>
       <Section2></Section2>
       <Section3></Section3>
-      <Section4></Section4>
+      <Section4></Section4> */}
     </>
   );
 }
