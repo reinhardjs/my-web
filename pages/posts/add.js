@@ -6,6 +6,8 @@ const Login = () => {
   const form = useForm();
   const { handleSubmit, register } = form;
 
+  console.log(process.env.NEXT_PUBLIC_API_HOST);
+
   const onSubmit = (data) => {
     data.title = "This-is-title";
     data.nickname = "reinhardjs";
@@ -16,7 +18,7 @@ const Login = () => {
         .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>]/gi, "")
         .toLowerCase();
 
-    axios.post("http://192.168.18.51:8080/posts", data).then(
+    axios.post(process.env.NEXT_PUBLIC_API_HOST + "/posts", data).then(
       (response) => {
         const { data } = response;
         console.log(data);
