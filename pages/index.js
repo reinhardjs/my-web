@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Section1 from "../components/section1";
 import Section2 from "../components/section2";
 import Section3 from "../components/section3";
@@ -27,29 +28,37 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
-          <a href="/learn-backend" className={styles.card}>
-            <h2 className="text-lg font-bold mb-2">Learn Backend &rarr;</h2>
-            <p className="text-md">
-              Here is my journey begins (again), you can find all of my backend
-              learning journey here
-            </p>
-          </a>
+          <Link href="/learn-backend">
+            <a className={styles.card}>
+              <h2 className="text-lg font-bold mb-2">Learn Backend &rarr;</h2>
+              <p className="text-md">
+                Here is my journey begins (again), you can find all of my
+                backend learning journey here
+              </p>
+            </a>
+          </Link>
 
-          <a href="/learn-kubernetes" className={styles.card}>
-            <h2 className="text-lg font-bold mb-2">Learn Kubernetes &rarr;</h2>
-            <p className="text-md">
-              All about deployment, scaling, and management of containerized
-              applications with Kubernetes
-            </p>
-          </a>
+          <Link href="/learn-kubernetes">
+            <a className={styles.card}>
+              <h2 className="text-lg font-bold mb-2">
+                Learn Kubernetes &rarr;
+              </h2>
+              <p className="text-md">
+                All about deployment, scaling, and management of containerized
+                applications with Kubernetes
+              </p>
+            </a>
+          </Link>
 
-          <a href="/learn-android" className={styles.card}>
-            <h2 className="text-lg font-bold mb-2">Learn Android &rarr;</h2>
-            <p className="text-md">
-              Maybe you can find the reason here why i left Android Dev. But not
-              so sure, I am still on it as a hobby.
-            </p>
-          </a>
+          <Link href="/learn-android">
+            <a className={styles.card}>
+              <h2 className="text-lg font-bold mb-2">Learn Android &rarr;</h2>
+              <p className="text-md">
+                Maybe you can find the reason here why i left Android Dev. But
+                not so sure, I am still on it as a hobby.
+              </p>
+            </a>
+          </Link>
         </div>
       </div>
       <Section1></Section1>
