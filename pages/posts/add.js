@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { nanoid } from "nanoid";
 
 const Login = () => {
   const form = useForm();
@@ -8,8 +9,12 @@ const Login = () => {
   const onSubmit = (data) => {
     data.title = "This-is-title";
     data.nickname = "reinhardjs";
-    data.tags = "learn-kubernetes";
-    data.url = "intro-to-kubernetes-2";
+    data.url =
+      data.url +
+      "-" +
+      nanoid(12)
+        .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>]/gi, "")
+        .toLowerCase();
 
     axios.post("http://192.168.18.51:8080/posts", data).then(
       (response) => {
@@ -31,6 +36,22 @@ const Login = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="space-y-4 p-2 sm:p-4 md:space-y-6">
+              <input
+                placeholder="TAGS"
+                className={`block w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 focus:border-gray-900 focus:ring-gray-900  dark:border-gray-600 text-black dark:placeholder-gray-400 dark:focus:border-gray-900 dark:focus:ring-gray-900 sm:text-sm`}
+                {...register("tags", {
+                  required: true,
+                })}
+              />
+
+              <input
+                placeholder="URL"
+                className={`block w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 focus:border-gray-900 focus:ring-gray-900  dark:border-gray-600 text-black dark:placeholder-gray-400 dark:focus:border-gray-900 dark:focus:ring-gray-900 sm:text-sm`}
+                {...register("url", {
+                  required: true,
+                })}
+              />
+
               <textarea
                 id="message"
                 rows="4"
