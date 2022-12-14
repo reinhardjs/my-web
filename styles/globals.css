@@ -21,6 +21,14 @@
   img {
     @apply py-2;
   }
+
+  code span {
+    @apply text-[17px] font-['Consolas'];
+  }
+
+  p {
+    @apply text-[#292929];
+  }
 }
 
 @keyframes spinner {
