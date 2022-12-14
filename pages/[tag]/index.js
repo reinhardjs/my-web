@@ -85,45 +85,43 @@ function Post({ data, tag }) {
   description = description.substring(0, 123) + "...";
 
   return (
-    <div className="item border-black border-[0.5px] rounded-2xl p-4">
-      <div className="images">
-        <Link href={`/${tags}/${url}`}>
-          <a>
-            <img
-              alt={""}
-              src={content.match(/!\[.*?\]\((.*?)\)/)[1]}
-              className="rounded"
-              width={500}
-              height={350}
-            />
-          </a>
-        </Link>
-      </div>
-      <div className="info flex justify-center flex-col py-4">
-        <div className="cat">
-          {/* <Link href={`/${tags}`}>
+    <Link href={`/${tags}/${url}`}>
+      <div className="card  hover:border-blue-700 cursor-pointer border-[0.5px] rounded-2xl p-4">
+        <div className="images">
+          <img
+            alt={""}
+            src={content.match(/!\[.*?\]\((.*?)\)/)[1]}
+            className="rounded"
+            width={500}
+            height={350}
+          />
+        </div>
+        <div className="info flex justify-center flex-col py-4">
+          <div className="cat">
+            {/* <Link href={`/${tags}`}>
             <a className="rounded-full bg-gray-100 px-2.5 py-0.5">{tag}</a>
           </Link> */}
-          {/* <Link href={`/${tags}/${url}`}>
+            {/* <Link href={`/${tags}/${url}`}>
             <a className="text-gray-800 hover:text-gray-600">
               {"  "}
               {}
             </a>
           </Link> */}
+          </div>
+          <div className="title">
+            <Link href={`/${tags}/${url}`}>
+              <a className="text-xl font-bold text-gray-800 hover:text-gray-600">
+                {content
+                  .match(/^#+\s+.+/)
+                  .toString()
+                  .replace("#", "")
+                  .trim()}
+              </a>
+            </Link>
+          </div>
+          <p className="text-gray-500 py-3">{description}</p>
         </div>
-        <div className="title">
-          <Link href={`/${tags}/${url}`}>
-            <a className="text-xl font-bold text-gray-800 hover:text-gray-600">
-              {content
-                .match(/^#+\s+.+/)
-                .toString()
-                .replace("#", "")
-                .trim()}
-            </a>
-          </Link>
-        </div>
-        <p className="text-gray-500 py-3">{description}</p>
       </div>
-    </div>
+    </Link>
   );
 }
