@@ -1,8 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  h1 {
+    @apply text-[30px] font-[800] text-black font-['Montserrat'];
+  }
+
+  h2 {
+    @apply text-[22px] font-[800] text-black font-['Montserrat'];
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 * > * {
   font-family: "Poppins", sans-serif;
@@ -39,13 +59,4 @@ img {
   @apply border-gray-200 rounded-full border-4 ease-linear h-10 w-10;
   border-top-color: #363ce0;
   animation: spinner 1.2s linear infinite;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
