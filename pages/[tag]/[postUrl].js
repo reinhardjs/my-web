@@ -26,7 +26,7 @@ function Article({ content }) {
         <div className="post px-8">
           {/* <h1 className="font-bold text-4xl text-center pb-5">This is title</h1> */}
           <div className="content text-gray-600 text-lg flex flex-col gap-4">
-            <ReactMarkdown>{content || "No Description"}</ReactMarkdown>
+            <ReactMarkdown>{content || ""}</ReactMarkdown>
           </div>
         </div>
       </section>
