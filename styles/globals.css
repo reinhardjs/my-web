@@ -7,11 +7,19 @@
 
 @layer components {
   h1 {
-    @apply text-[30px] font-[800] text-black font-['Montserrat'];
+    @apply text-[32px] font-[800] text-black font-['Montserrat'] leading-snug py-10;
   }
 
   h2 {
-    @apply text-[22px] font-[800] text-black font-['Montserrat'];
+    @apply text-[23px] font-[800] text-black font-['Montserrat'] leading-tight mt-8;
+  }
+
+  h3 {
+    @apply text-[18px] font-[700] text-black font-['Montserrat'] mt-4;
+  }
+
+  img {
+    @apply py-2;
   }
 }
 
