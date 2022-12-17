@@ -37,6 +37,17 @@
   .content p > code {
     @apply bg-[#F2F2F2] px-2 py-1 rounded-md;
   }
+
+  .content blockquote {
+    @apply py-2;
+  }
+
+  .content blockquote p {
+    @apply italic;
+    margin: 0;
+    padding-left: 0.7em;
+    border-left: 0.325em rgb(122, 122, 122) solid;
+  }
 }
 
 @keyframes spinner {
