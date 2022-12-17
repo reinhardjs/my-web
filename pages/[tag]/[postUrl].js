@@ -15,7 +15,7 @@ import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
 
 import { useRouter } from "next/router";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark as syntaxTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { oneDark as syntaxTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import ErrorComponent from "../../components/_child/error";
 import Spinner from "../../components/_child/spinner";
