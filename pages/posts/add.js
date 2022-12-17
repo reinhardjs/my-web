@@ -6,8 +6,6 @@ const Login = () => {
   const form = useForm();
   const { handleSubmit, register } = form;
 
-  console.log(process.env.NEXT_PUBLIC_API_HOST);
-
   const onSubmit = (data) => {
     data.title = "This-is-title";
     data.nickname = "reinhardjs";
