@@ -6,12 +6,12 @@ import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import kotlin from "react-syntax-highlighter/dist/cjs/languages/prism/kotlin";
 import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import go from "react-syntax-highlighter/dist/cjs/languages/prism/go";
-import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
-import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
-import scss from "react-syntax-highlighter/dist/cjs/languages/prism/scss";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
-import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown";
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
+//import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
+//import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
+//import scss from "react-syntax-highlighter/dist/cjs/languages/prism/scss";
+//import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown";
 
 import { useRouter } from "next/router";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -25,12 +25,12 @@ SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("kotlin", kotlin);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
 SyntaxHighlighter.registerLanguage("go", go);
-SyntaxHighlighter.registerLanguage("tsx", tsx);
-SyntaxHighlighter.registerLanguage("typescript", typescript);
-SyntaxHighlighter.registerLanguage("scss", scss);
 SyntaxHighlighter.registerLanguage("bash", bash);
-SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
+// SyntaxHighlighter.registerLanguage("tsx", tsx);
+// SyntaxHighlighter.registerLanguage("typescript", typescript);
+// SyntaxHighlighter.registerLanguage("scss", scss);
+// SyntaxHighlighter.registerLanguage("markdown", markdown);
 
 export default function Page() {
   const router = useRouter();
