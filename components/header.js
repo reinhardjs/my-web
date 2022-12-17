@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function header() {
   return (
-    <header className="bg-gray-50">
-      <div className="px-10 max-w-4xl mx-auto flex items-center flex-row justify-between text-center py-3">
-        <div className="">
+    <header className="bg-gray-50 pl-6 pr-8">
+      <div className="max-w-5xl mx-auto flex items-center flex-row justify-between text-center py-3">
+        <div className="pl-2">
           <Link href={"/"}>
             <a>
               <Image width={35} height={35} src={"/logo.png"} alt={""} />

@@ -37,16 +37,18 @@ function PostList({ data, isLoading, isError, tag }) {
     if (isError) return <ErrorComponent></ErrorComponent>;
 
     return (
-      <section className="container mx-auto md:px-20">
-        <h1 className="font-bold text-4xl py-12 text-center">
-          {renderTag(tag)}
-        </h1>
+      <section className="px-8">
+        <div className="container mx-auto max-w-5xl">
+          <h1 className="font-bold text-4xl py-12 text-center">
+            {renderTag(tag)}
+          </h1>
 
-        {/* grid columns */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
-          {data.data.map((value, index) => (
-            <Post data={value} key={index} tag={renderTag(tag)}></Post>
-          ))}
+          {/* grid columns */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
+            {data.data.map((value, index) => (
+              <Post data={value} key={index} tag={renderTag(tag)}></Post>
+            ))}
+          </div>
         </div>
       </section>
     );
