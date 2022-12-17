@@ -15,7 +15,7 @@ import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
 
 import { useRouter } from "next/router";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { a11yDark as syntaxTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import ErrorComponent from "../../components/_child/error";
 import Spinner from "../../components/_child/spinner";
@@ -88,8 +88,6 @@ function extractContent(content) {
 }
 
 function Article({ content }) {
-  const syntaxTheme = oneDark;
-
   const MarkdownComponents = {
     code({ node, inline, className, ...props }) {
       const match = /language-(\w+)/.exec(className || "");
@@ -114,7 +112,7 @@ function Article({ content }) {
       return match ? (
         <SyntaxHighlighter
           style={syntaxTheme}
-          language={"bash"}
+          language={match.length > 1 ? match[1] : "bash"}
           PreTag="div"
           className="codeStyle"
           showLineNumbers={false}
