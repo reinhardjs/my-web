@@ -1,10 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { useRouter } from "next/router";
-
 import rangeParser from "parse-numeric-range";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import kotlin from "react-syntax-highlighter/dist/cjs/languages/prism/kotlin";
@@ -16,6 +12,10 @@ import scss from "react-syntax-highlighter/dist/cjs/languages/prism/scss";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown";
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
+
+import { useRouter } from "next/router";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import ErrorComponent from "../../components/_child/error";
 import Spinner from "../../components/_child/spinner";
