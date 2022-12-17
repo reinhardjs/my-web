@@ -121,7 +121,7 @@ function Article({ content }) {
   // get first paragraph
   articleDescription = articleDescription.match(/^\s*(\n)?(.+)/gm)[0];
 
-  articleDescription = articleDescription.substring(0, 123) + "...";
+  articleDescription = articleDescription.substring(0, 123).trim() + "...";
 
   const firstArticleImage = content.match(/!\[.*?\]\((.*?)\)/)[1];
 
