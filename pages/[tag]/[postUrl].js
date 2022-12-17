@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useRouter } from "next/router";
 
 import rangeParser from "parse-numeric-range";
@@ -92,7 +93,10 @@ function Article({ content }) {
         <div className="post px-8">
           {/* <h1 className="font-bold text-4xl text-center pb-5">This is title</h1> */}
           <div className="content text-gray-600 text-lg flex flex-col gap-4">
-            <ReactMarkdown components={MarkdownComponents}>
+            <ReactMarkdown
+              components={MarkdownComponents}
+              remarkPlugins={[remarkGfm]}
+            >
               {content || ""}
             </ReactMarkdown>
           </div>
