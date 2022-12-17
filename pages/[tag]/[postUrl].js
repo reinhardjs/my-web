@@ -46,6 +46,15 @@ export default function Page() {
   return <Article {...data.data}></Article>;
 }
 
+function LinkRenderer(props) {
+  console.log({ props });
+  return (
+    <a href={props.href} target="_blank" rel="noreferrer noopener">
+      {props.children}
+    </a>
+  );
+}
+
 function Article({ content }) {
   const syntaxTheme = oneDark;
 
@@ -86,6 +95,7 @@ function Article({ content }) {
         <code className={className} {...props} />
       );
     },
+    a: LinkRenderer,
   };
   return (
     <>
