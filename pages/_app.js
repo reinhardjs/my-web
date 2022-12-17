@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
           data-rh="true"
           property="article:author"
           content={
-            `Reinhard Jonathan Silalahi | ` + pageProps.metaTags?.resolvedUrl
+            `Reinhard Jonathan Silalahi | ` + pageProps.metaTags?.host
           }
         />
         <meta
