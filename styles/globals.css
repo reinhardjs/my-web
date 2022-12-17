@@ -23,7 +23,7 @@
   }
 
   code span {
-    @apply text-[16px] font-['Consolas'];
+    @apply text-[15px] font-['Consolas'];
   }
 
   p {
