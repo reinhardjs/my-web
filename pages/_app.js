@@ -31,9 +31,7 @@ function MyApp({ Component, pageProps }) {
         <meta
           data-rh="true"
           property="article:author"
-          content={
-            `Reinhard Jonathan Silalahi | ` + pageProps.metaTags?.host
-          }
+          content={`Reinhard Jonathan Silalahi | ` + pageProps.metaTags?.host}
         />
         <meta
           data-rh="true"
@@ -67,6 +65,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           data-rh="true"
+          name="image"
           property="og:image"
           content={pageProps.metaTags?.firstArticleImage}
         ></meta>
