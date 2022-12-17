@@ -4,7 +4,6 @@ import Format from "../layout/format";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  console.log(pageProps.metaTags);
   return (
     <>
       <Head>
