@@ -21,6 +21,7 @@ import ErrorComponent from "../../components/_child/error";
 import Spinner from "../../components/_child/spinner";
 import fetcher from "../../lib/fetcher";
 import Head from "next/head";
+import { useEffect } from "react";
 
 SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("kotlin", kotlin);
@@ -33,11 +34,11 @@ SyntaxHighlighter.registerLanguage("json", json);
 // SyntaxHighlighter.registerLanguage("scss", scss);
 // SyntaxHighlighter.registerLanguage("markdown", markdown);
 
-export default function Page() {
+export default function Page(props) {
   const router = useRouter();
   const { postUrl, tag } = router.query;
 
-  const { data, isLoading, isError } = fetcher(`posts/${postUrl}`);
+  const { data, isLoading, isError } = fetcher(`posts/${postUrl}`, props);
 
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <ErrorComponent></ErrorComponent>;
@@ -53,6 +54,37 @@ function LinkRenderer(props) {
       {props.children}
     </a>
   );
+}
+
+function extractContent(content) {
+  const articleTitle = content
+    .match(/^#+\s+.+/)
+    .toString()
+    .replace("#", "")
+    .trim();
+
+  var articleDescription = content;
+
+  // res: https://codepen.io/kvendrik/pen/bGKeEE
+  // escape h
+  articleDescription = articleDescription.replace(/[\#]{6}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{5}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{4}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{3}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{2}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{1}(.+)/g, "");
+
+  // escape img
+  articleDescription = articleDescription.replace(/!\[.*?\]\((.*?)\)/g, "");
+
+  // get first paragraph
+  articleDescription = articleDescription.match(/^\s*(\n)?(.+)/gm)[0];
+
+  articleDescription = articleDescription.substring(0, 123).trim() + "...";
+
+  const firstArticleImage = content.match(/!\[.*?\]\((.*?)\)/)[1];
+
+  return { articleTitle, articleDescription, firstArticleImage };
 }
 
 function Article({ content }) {
@@ -98,76 +130,11 @@ function Article({ content }) {
     a: LinkRenderer,
   };
 
-  const articleTitle = content
-    .match(/^#+\s+.+/)
-    .toString()
-    .replace("#", "")
-    .trim();
-
-  var articleDescription = content;
-
-  // res: https://codepen.io/kvendrik/pen/bGKeEE
-  // escape h
-  articleDescription = articleDescription.replace(/[\#]{6}(.+)/g, "");
-  articleDescription = articleDescription.replace(/[\#]{5}(.+)/g, "");
-  articleDescription = articleDescription.replace(/[\#]{4}(.+)/g, "");
-  articleDescription = articleDescription.replace(/[\#]{3}(.+)/g, "");
-  articleDescription = articleDescription.replace(/[\#]{2}(.+)/g, "");
-  articleDescription = articleDescription.replace(/[\#]{1}(.+)/g, "");
-
-  // escape img
-  articleDescription = articleDescription.replace(/!\[.*?\]\((.*?)\)/g, "");
-
-  // get first paragraph
-  articleDescription = articleDescription.match(/^\s*(\n)?(.+)/gm)[0];
-
-  articleDescription = articleDescription.substring(0, 123).trim() + "...";
-
-  const firstArticleImage = content.match(/!\[.*?\]\((.*?)\)/)[1];
+  const { articleTitle } = extractContent(content);
 
   return (
     <>
       <Head>
-        <meta
-          data-rh="true"
-          property="article:author"
-          content={window.location.hostname}
-        />
-        <meta
-          data-rh="true"
-          name="author"
-          content="Reinhard Jonathan Silalahi"
-        />
-        <meta
-          data-rh="true"
-          name="robots"
-          content="index,follow,max-image-preview:large"
-        />
-        <meta data-rh="true" name="referrer" content="unsafe-url" />
-        <meta data-rh="true" property="og:type" content="article" />
-        <meta data-rh="true" property="og:url" content={window.location.href} />
-        <meta
-          data-rh="true"
-          property="al:web:url"
-          content={window.location.href}
-        />
-
-        <meta data-rh="true" property="og:title" content={articleTitle} />
-        <meta
-          data-rh="true"
-          property="og:description"
-          content={articleDescription}
-        />
-
-        <meta data-rh="true" name="title" content={articleTitle} />
-        <meta data-rh="true" name="description" content={articleDescription} />
-
-        <meta
-          data-rh="true"
-          property="og:image"
-          content={firstArticleImage}
-        ></meta>
-
         <title>{articleTitle}</title>
       </Head>
       <section className="container -mt-2 md:mt-0 py-4 max-w-4xl md:mx-auto mb-24">
@@ -185,4 +152,27 @@ function Article({ content }) {
       </section>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const baseURL = process.env.NEXT_PUBLIC_API_HOST + "/";
+  var response = await fetch(`${baseURL}` + `posts/${context.params.postUrl}`);
+  response = await response.json();
+
+  const { articleTitle, articleDescription, firstArticleImage } =
+    extractContent(response.data.content);
+
+  return {
+    props: {
+      response: JSON.stringify(response),
+      context: context.params,
+      metaTags: {
+        host: context.req.headers.host,
+        resolvedUrl: context.req.headers.host + context.resolvedUrl,
+        articleTitle,
+        articleDescription,
+        firstArticleImage,
+      },
+    },
+  };
 }
