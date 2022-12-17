@@ -29,6 +29,10 @@
   p {
     @apply text-[#292929];
   }
+
+  .content p > a {
+    @apply underline;
+  }
 }
 
 @keyframes spinner {
