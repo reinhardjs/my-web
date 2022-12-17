@@ -20,6 +20,7 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import ErrorComponent from "../../components/_child/error";
 import Spinner from "../../components/_child/spinner";
 import fetcher from "../../lib/fetcher";
+import Head from "next/head";
 
 SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("kotlin", kotlin);
@@ -47,7 +48,6 @@ export default function Page() {
 }
 
 function LinkRenderer(props) {
-  console.log({ props });
   return (
     <a href={props.href} target="_blank" rel="noreferrer noopener">
       {props.children}
@@ -97,8 +97,79 @@ function Article({ content }) {
     },
     a: LinkRenderer,
   };
+
+  const articleTitle = content
+    .match(/^#+\s+.+/)
+    .toString()
+    .replace("#", "")
+    .trim();
+
+  var articleDescription = content;
+
+  // res: https://codepen.io/kvendrik/pen/bGKeEE
+  // escape h
+  articleDescription = articleDescription.replace(/[\#]{6}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{5}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{4}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{3}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{2}(.+)/g, "");
+  articleDescription = articleDescription.replace(/[\#]{1}(.+)/g, "");
+
+  // escape img
+  articleDescription = articleDescription.replace(/!\[.*?\]\((.*?)\)/g, "");
+
+  // get first paragraph
+  articleDescription = articleDescription.match(/^\s*(\n)?(.+)/gm)[0];
+
+  articleDescription = articleDescription.substring(0, 123) + "...";
+
+  const firstArticleImage = content.match(/!\[.*?\]\((.*?)\)/)[1];
+
   return (
     <>
+      <Head>
+        <meta
+          data-rh="true"
+          property="article:author"
+          content={window.location.hostname}
+        />
+        <meta
+          data-rh="true"
+          name="author"
+          content="Reinhard Jonathan Silalahi"
+        />
+        <meta
+          data-rh="true"
+          name="robots"
+          content="index,follow,max-image-preview:large"
+        />
+        <meta data-rh="true" name="referrer" content="unsafe-url" />
+        <meta data-rh="true" property="og:type" content="article" />
+        <meta data-rh="true" property="og:url" content={window.location.href} />
+        <meta
+          data-rh="true"
+          property="al:web:url"
+          content={window.location.href}
+        />
+
+        <meta data-rh="true" property="og:title" content={articleTitle} />
+        <meta
+          data-rh="true"
+          property="og:description"
+          content={articleDescription}
+        />
+
+        <meta data-rh="true" name="title" content={articleTitle} />
+        <meta data-rh="true" name="description" content={articleDescription} />
+
+        <meta
+          data-rh="true"
+          property="og:image"
+          content={firstArticleImage}
+        ></meta>
+
+        <title>{articleTitle}</title>
+      </Head>
       <section className="container -mt-2 md:mt-0 py-4 max-w-4xl md:mx-auto mb-24">
         <div className="post px-8">
           {/* <h1 className="font-bold text-4xl text-center pb-5">This is title</h1> */}
