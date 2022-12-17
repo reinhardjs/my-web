@@ -33,6 +33,10 @@
   .content p > a {
     @apply underline;
   }
+
+  .content p > code {
+    @apply bg-[#F2F2F2] px-2 py-1 rounded-md;
+  }
 }
 
 @keyframes spinner {
