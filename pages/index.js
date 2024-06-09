@@ -25,6 +25,18 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
+
+          <Link href="/learn-jesus">
+            <a className={styles.card}>
+              <h2 className="text-lg font-bold mb-2 mt-0">
+                Learn Jesus &rarr;
+              </h2>
+              <p className="text-md">
+                Maybe you can find your destiny here and come to know that Jesus is our savior
+              </p>
+            </a>
+          </Link>
+
           <Link href="/learn-backend">
             <a className={styles.card}>
               <h2 className="text-lg font-bold mb-2 mt-0">
@@ -44,18 +56,6 @@ export default function Home() {
               </h2>
               <p className="text-md">
                 All about deployment, scaling, and management with Kubernetes
-              </p>
-            </a>
-          </Link>
-
-          <Link href="/learn-android">
-            <a className={styles.card}>
-              <h2 className="text-lg font-bold mb-2 mt-0">
-                Learn Android &rarr;
-              </h2>
-              <p className="text-md">
-                Maybe you can find the reason here why i left Android Dev. But
-                not so sure, I am still on it as a hobby.
               </p>
             </a>
           </Link>
