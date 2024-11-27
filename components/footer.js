@@ -17,7 +17,7 @@ export default function footer() {
                 <ImTwitter color="#888888" />
               </a>
             </Link>
-            <Link href={"https://youtube.com/@reinhardjs"}>
+            <Link href={"https://youtube.com/@sumaven"}>
               <a>
                 <ImYoutube color="#888888" />
               </a>

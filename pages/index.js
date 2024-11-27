@@ -10,17 +10,16 @@ export default function Home() {
   return (
     <>
       <div className={styles.main}>
-        <h1 className="text-4xl md:text-5xl font-black text-center pt-20 pb-12">
+        <h1 className="text-4xl md:text-5xl font-black text-center pt-20 pb-12 m-4">
           Hi! {"I'm"} Reinhard Jonathan Silalahi
         </h1>
 
-        <div className="max-w-3xl">
+        <div className="max-w-3xl m-4">
           <div className="text-center text-lg md:text-xl mt-0 pb-8">
             <p className="leading-10 pb-4">
               Welcome to my personal blog/journal site. Here you can find topics
-              related to backend, kubernetes, android, and so on.
+              related to backend, kubernetes, machine learning, and so on.
             </p>
-            <p className="leading-10">Happy learning!</p>
           </div>
         </div>
 
