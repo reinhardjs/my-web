@@ -4,6 +4,13 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     outputStandalone: true
+  },
+  images: {
+    domains: [
+      'picsum.photos',
+      'images.unsplash.com',
+      'avatars.githubusercontent.com',
+    ],
   }
 }
 
