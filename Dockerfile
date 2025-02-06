@@ -1,10 +1,12 @@
 # Build stage
-FROM node:16-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm ci
+
+# Install dependencies using yarn
+RUN yarn install
 
 # Copy source files
 COPY . .
@@ -14,7 +16,7 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # Build the application
-RUN npm run build
+RUN yarn build
 
 # Production stage
 FROM node:16-alpine AS runner
