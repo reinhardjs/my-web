@@ -90,7 +90,7 @@ function Post({ data, tag }) {
     <Link href={`/${tags}/${url}`}>
       <div className="card  hover:border-blue-700 cursor-pointer border-[0.5px] rounded-2xl p-4">
         <div className="images">
-          <img
+          <Image
             alt={""}
             src={content.match(/!\[.*?\]\((.*?)\)/)[1]}
             className="rounded"
