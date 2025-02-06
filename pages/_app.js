@@ -1,18 +1,12 @@
 import Head from "next/head";
-import Format from "../layout/format";
+import LandingPage from "../layout/landingPage";
 
 import "../styles/globals.css";
-import { NextScript } from "next/document";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <NextScript
-          async={true}
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292440827260317"
-          crossOrigin="anonymous"
-        ></NextScript>
         <meta
           data-rh="true"
           name="author"
@@ -70,9 +64,9 @@ function MyApp({ Component, pageProps }) {
           content={pageProps.metaTags?.firstArticleImage}
         ></meta>
       </Head>
-      <Format>
+      <LandingPage>
         <Component {...pageProps} />
-      </Format>
+      </LandingPage>
     </>
   );
 }
