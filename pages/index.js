@@ -24,9 +24,10 @@ export default function Home() {
 
       {/* Full Height Hero Section */}
       <section className="h-[calc(100vh-128px)] flex flex-col justify-center items-center bg-white relative">
-        <div className="text-center">
-          <h1 className="text-5xl md:text-6xl px-6 md:px-0 font-black mb-6">Reinhard Jonathan Silalahi</h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto px-4">
+        <div className="text-center mt-[-96px] md:mt-[-86px]">
+          <h1 className="text-xl md:text-4xl font-semibold text-black py-4">Hello 👋 I'm</h1>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 mt-0">Reinhard Jonathan Silalahi</h2>
+          <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto px-4">
             Software Engineer specializing in Backend Development, Cloud-native solution, and Artificial Intelligence Engineering
           </p>
         </div>
@@ -34,10 +35,10 @@ export default function Home() {
         {/* Bouncing Arrow */}
         <button
           onClick={scrollToLearning}
-          className="absolute bottom-0 lg:bottom-4 animate-bounce p-2 rounded-full hover:bg-gray-50 transition-colors"
+          className="absolute bottom-5 lg:bottom-8 animate-bounce p-2 rounded-full hover:bg-gray-50 transition-colors"
           aria-label="Scroll to Learning Journey"
         >
-          <IoIosArrowDown className="w-8 h-8 text-gray-600" />
+          <IoIosArrowDown className="w-10 h-10 text-gray-600" />
         </button>
       </section>
 
