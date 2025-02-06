@@ -2,16 +2,17 @@ import Head from "next/head";
 import Format from "../layout/format";
 
 import "../styles/globals.css";
+import { NextScript } from "next/document";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <script
+        <NextScript
           async={true}
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292440827260317"
           crossOrigin="anonymous"
-        ></script>
+        ></NextScript>
         <meta
           data-rh="true"
           name="author"
