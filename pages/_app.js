@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Reinhard Jonathan</title>
         <meta
           data-rh="true"
           name="author"
