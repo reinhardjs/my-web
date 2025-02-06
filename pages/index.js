@@ -161,7 +161,7 @@ const categories = [
     icon: <FaCross className="w-12 h-12 text-gray-600" />
   },
   {
-    title: "Backend Development",
+    title: "Backend",
     description: "Learn about API design, databases, and server architecture",
     href: "/learn-backend",
     icon: <IoServer className="w-12 h-12 text-gray-600" />
